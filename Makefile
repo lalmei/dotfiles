@@ -7,7 +7,7 @@ dotbot_bin := bin/dotbot
 
 SHELL := zsh
 base_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-config := install.conf.yaml
+config := install.conf.json
 
 
 run:  $(config) sync-dotbot links shell brewfile # run full install

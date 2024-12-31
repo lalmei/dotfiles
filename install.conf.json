@@ -7,7 +7,7 @@
            {
              "stdout": true,
              "stderr": true,
-             "include": ["tap", "brew", "cask", "vscode", "mas"],
+             "include": ["tap", "brew", "cask", "vscode", "mas"]
            },
          "shell":
          {
@@ -16,7 +16,7 @@
           "stderr": true,
          "quiet": false
          }
-      },
+      }
   },
   {
     "link":
@@ -32,14 +32,13 @@
         "~/.config/btop/": { "path": "config/btop/*", "glob": true },
         "~/.config/starship.toml": { "path": "config/starship/starship.toml" },
         "~/.vimrc/": { "path": "config/vim/vimrc" },
-
-        "~/.config/tmux/": { "path": "config/tmux/*", "glob":true },
-      },
+        "~/.config/tmux/": { "path": "config/tmux/*", "glob":true }
+      }
   },
   { "shell": [
     {
       "command": "zsh config/mac/initializer.sh",
-      "description": "Install brew, brew bundle and mas",
+      "description": "Install brew, brew bundle and mas"
     },
     {
       "command": "git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm",
@@ -48,5 +47,5 @@
     ]
   },
   { "brewfile": { "file": "config/mac/Brewfile" } },
-  { "clean": [ "~/.config", "~"] },
+  { "clean": [ "~/.config", "~"] }
 ]
