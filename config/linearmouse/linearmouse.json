@@ -1,0 +1,76 @@
+{
+    "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1-beta.1",
+    "schemes" : [
+
+      {
+        "if" : {
+          "device" : {
+            "category" : "mouse",
+            "productID" : "0xf00d",
+            "productName" : "VirtualHID",
+            "serialNumber" : "0001",
+            "vendorID" : "0xfeed"
+          }
+        },
+        "buttons" : {
+          "mappings" : [
+            {
+              "action" : "showDesktop",
+              "button" : 4,
+              "command" : false,
+              "control" : false,
+              "option" : false,
+              "shift" : false
+            },
+            {
+              "action" : "missionControl",
+              "button" : 3,
+              "command" : false,
+              "control" : false,
+              "option" : false,
+              "shift" : false
+            }
+          ]
+        },
+        "pointer" : {
+          "acceleration" : 6.4741,
+          "speed" : 0.2579
+        }
+      },
+      {
+        "if" : {
+          "device" : {
+            "category" : "mouse",
+            "productID" : "0xc539",
+            "productName" : "USB Receiver",
+            "vendorID" : "0x46d"
+          }
+        },
+        "pointer" : {
+          "acceleration" : 6.4741,
+          "speed" : 0.2579
+        },
+        "buttons" : {
+          "mappings" : [
+            {
+              "action" : "showDesktop",
+              "button" : 4,
+              "command" : false,
+              "control" : false,
+              "option" : false,
+              "shift" : false
+            },
+            {
+              "action" : "missionControl",
+              "button" : 3,
+              "command" : false,
+              "control" : false,
+              "option" : false,
+              "shift" : false
+            }
+          ]
+        }
+      }
+
+    ]
+  }

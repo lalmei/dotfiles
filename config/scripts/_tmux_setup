@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+
+if [[ -z $1 ]]; then
+	echo "Usage: $0 <project name>"
+	exit 1
+fi
+
+
+if uname -s = "Darwin"; then
+
+#use aerospace
+
+aerospace workspace '\uf1c9'
+
+
+else
+
+# use i3wm
+
+fi

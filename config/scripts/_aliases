@@ -1,0 +1,96 @@
+#!/usr/bin/env sh
+
+# vi < vim < nvim substituton
+export EDITOR='vi'
+export VISUAL='vi'
+command -v vim >/dev/null &&
+	export EDITOR='vim' &&
+	export VISUAL='vim' &&
+	alias vi='vim' &&
+	command -v nvim >/dev/null &&
+	export EDITOR='nvim' &&
+	export VISUAL='nvim' &&
+	alias vim='nvim'
+
+
+# FZF options for finding files
+command -v fd >/dev/null &&
+	export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git" ||
+	export FZF_DEFAULT_COMMAND="find . --type f"
+
+# Set preview aliases for Fuzzy Finder alias scripts
+command -v eza >/dev/null &&
+	# --color-scale only available with eza v >0.15.0
+	export LS_PREVIEW_CMD="eza -al --git --color=always --color-scale --group-directories-first --icons --no-permissions " ||
+	export LS_PREVIEW_CMD="ls -lahg --color=auto "
+
+command -v bat >/dev/null &&
+	export CAT_PREVIEW_CMD="bat --style header --style snip --style changes --style header " ||
+	export CAT_PREVIEW_CMD="cat -n "
+
+
+# Replacing
+
+command -v zoxide >/dev/null &&
+    alias cd='z'
+
+command -v bat >/dev/null &&
+    alias cat='bat'
+
+
+command -v eza >/dev/null &&
+	# preferred listing
+	alias ls='eza -al --git --color=always --group-directories-first --icons' &&
+	# long format
+	alias ll='eza -alihgmuU --git --color=always --group-directories-first --icons' &&
+	# all files and dirs
+	alias la='eza -a --color=always  --group-directories-first --icons' &&
+	# tree listing
+	alias lt='eza -aT --color=always --group-directories-first --icons' &&
+	# show only dotfiles
+	alias l.='eza -a | grep -E "^\."' ||
+	# Ls with with no eza
+	alias ls='ls --color=auto -lhsi --author'
+
+# Force tmux color
+command -v tmux >/dev/null &&
+	alias tmux='tmux -2 ' &&
+	alias tmuxn='tmux -2 new -s ' &&
+	# Use fuzzy finder to select what tmux session to attach to
+	alias tmuxa='tmux attach -t $(tmux list-sessions | sed "s/:.*//" | fzf --header "Select what tmux session to attach to")'
+
+# Common use
+alias dus='du -hd 1'
+alias duss='du -hd 1 | sort -hr'
+alias grubup='sudo update-grub'
+alias tarnow='tar -acf '
+alias untar='tar -xvf '
+alias wget='wget -c '
+# alias psmem='ps auxf | sort -nr -k 4'
+# alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+
+# Process killer
+alias pkl='ps aux | fzf --header "Please select what process to kill" | awk "{print $2}" | xargs kill'
+
+
+# Extract GPS data from image with imagemagick
+# $1 file name
+alias image-gps='identify -format "%[EXIF:GPSLatitude],%[EXIF:GPSLongitude]\n" '
+
+
+# Docker aliases
+alias dk='docker'
+alias dkup='sudo systemctl start docker.service'
+alias dkdown='sudo systemctl stop docker.service'
+alias dkstop='docker stop $(docker ps -a --format "{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}" | fzf --header "Please select which container to stop" --preview "docker container inspect '{1}'" --preview-window "top:60%" --preview-label "Container inspect" | cut -f 1 -d " ")'
+alias dkstopA='docker ps -a -q | xargs docker stop'
+alias dkrm='docker rm $(docker ps -a --format "{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}" | fzf --header "Please select which container to remove" --preview "docker container inspect '{1}'" --preview-window "top:60%" --preview-label "Container inspect" | cut -f 1 -d " ")'
+alias dkrM='docker rm --force $(docker ps -a --format "{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}" | fzf --header "Please select which container to remove" --preview "docker container inspect '{1}'" --preview-window "top:60%" --preview-label "Container inspect" | cut -f 1 -d " ")'
+alias dkrmA='docker ps -a -q | xargs docker rm'
+alias dkrmi='docker rmi $(docker images -a --format "{{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedSince}}\t{{.Size}}" | fzf --header "Please select which image to remove" --preview "docker image inspect '{1}'" --preview-window "top:60%" --preview-label "Image inspect" | cut -f 1 -d " ")'
+alias dkrmI='docker rmi --force $(docker images -a --format "{{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedSince}}\t{{.Size}}" | fzf --header "Please select which image to remove" --preview "docker image inspect '{1}'" --preview-window "top:60%" --preview-label "Image inspect" | cut -f 1 -d " ")'
+alias dkrmiA='docker images -a -q | xargs docker rmi'
+alias dkvolrm='docker volume rm $(docker volume ls -q --format "{{.Name}}" | fzf --header "Please select which volume to remove" --preview "docker volume inspect '{1}'" --preview-window "top:60%" --preview-label "Volume inspect" | cut -f 1 -d " ")'
+alias dkvolrmA='docker system prune --volumes --all --force && docker volume rm $(docker volume ls -q --format "{{.Name}}")'
+alias dkprune='docker image prune && docker system prune -af'

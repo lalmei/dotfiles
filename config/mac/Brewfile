@@ -1,0 +1,148 @@
+
+# Install GNU core utilities (those that come with macOS are outdated).
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+# GNU File, Shell, and Text utilities
+
+brew "coreutils"
+brew "moreutils"
+brew "findutils"
+
+brew "gnu-sed"
+
+
+# Install more recent versions of some macOS tools.
+brew  "vim"
+brew  "neovim"
+brew  "openssh"
+
+
+# Install latest git
+
+brew "git"
+brew "git-lfs"
+
+# Install latest make
+brew "make"
+brew "binutils"
+brew "binwalk"
+brew "llvm"
+brew "lld"
+# General-purpose data compression with high compression ratio
+# brew "xz"
+
+# Various Compression libraries and CLI's
+# Remove large files or passwords from Git history like git-filter-branch
+brew "bfg"
+
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+
+# Parallel gzip
+# brew "pigz"
+# brew "zlib"
+
+
+# Also known as: pipeviewer
+# Monitor data's progress through a pipe
+# brew "pv"
+
+# Images
+# brew  "netpbm"
+# brew  "pngcheck"
+brew  "imagemagick"
+
+# cpp stuff
+
+brew "boost"
+brew "boost-mpi"
+brew "cmake"
+brew "cython"
+brew "eigen"
+
+# latex
+
+brew "tectonic"
+
+# python
+brew "python@3.12"
+brew "python@3.13"
+brew "jupyterlab"
+brew "pipx"
+
+# ml
+brew "ollama"
+#Port scanning utility for large networks
+brew "nmap"
+
+brew "speedtest_cli"
+
+# File recovery and cracking passwords
+
+# brew install cifer
+# brew install fcrackzip
+
+# File recovery
+# https://github.com/gerryamurphy/Foremost
+# brew  foremost
+
+
+# brew  hashpump
+# brew  hydra
+# brew  john
+# brew  knock
+# brew  sqlmap
+# brew  socat
+
+
+
+# brew  tcpreplay
+# brew  tcptrace
+# brew  ucspi-tcp # `tcpserver` etc.
+
+
+
+# Modern Versions of common cli tools.
+
+brew "fzf"
+brew "zoxide"
+brew "bat"
+brew "starship"
+brew "eza"
+brew "tree"
+brew "httpie"
+brew "btop"
+cask "linearmouse"
+cask "alacritty"
+
+cask "nikitabobko/tap/aerospace"
+
+brew "tmux"
+brew "gh" # github
+
+# docker
+
+cask "docker"
+brew "docker-machine"
+cask "virtualbox"
+
+
+#lsp
+
+brew "tree-sitter"
+
+
+
+
+
+## fonts
+
+cask "sf-symbols"
+cask "font-hack-nerd-font"
+cask "font-sf-mono"
+cask "font-sf-pro"
+
+## apple store
+
+#obsidian webclipper
+mas "obsidian-webclipper", id: 6720708363
+mas "Tomito", id: 1526042938
