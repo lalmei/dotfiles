@@ -113,7 +113,13 @@ brew "httpie"
 brew "btop"
 cask "linearmouse"
 cask "alacritty"
+cask "obsidian"
 
+tap "FelixKratz/formulae"
+brew "sketchybar"
+
+
+tap "nikitabobko/tap"
 cask "nikitabobko/tap/aerospace"
 
 brew "tmux"
@@ -143,6 +149,75 @@ cask "font-sf-pro"
 
 ## apple store
 
-#obsidian webclipper
+# obsidian webclipper
 mas "obsidian-webclipper", id: 6720708363
 mas "Tomito", id: 1526042938
+mas "Codye", id: 1516894961
+mas "Color Picker", id: 1545870783
+mas "Goodnotes", id: 1444383602 # ipad handwritten notes
+
+# java jdk
+tap "bell-sw/liberica"
+cask "liberica-jdk15-full"
+cask "liberica-jdk22-full"
+
+## apps for the kidos
+cask "minecraft"
+#minecraft
+cask "prismlauncher"
+
+#typing practice
+mas "Type to Learn", id: 1401007562
+
+
+
+
+# vscode
+
+cask "visual-studio-code"
+
+#vscode extensions
+
+#theme
+vscode "catppuccin.catppuccin-vsc"
+#vim
+vscode "vscodevim.vim"
+
+## gemini ins vscode
+vscode "google.geminicodeassist"
+vscode "googlecloudtools.cloudcode"
+
+
+###  python
+
+vscode "ms-python.debugpy"
+vscode "ms-python.mypy-type-checker"
+vscode "ms-python.pylint"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "charliermarsh.ruff"
+
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.makefile-tools"
+
+# kids robotics
+vscode "vexrobotics.vexcode"
+vscode "vexrobotics.vexfeedback"
+
+# search font awesome icons from vscode
+vscode "abax.nearest-icons"
+
+
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+
+vscode "davidanson.vscode-markdownlint"

@@ -47,5 +47,6 @@
     ]
   },
   { "brewfile": { "file": "config/mac/Brewfile" } },
+
   { "clean": [ "~/.config", "~"] }
 ]

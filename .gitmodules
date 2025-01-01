@@ -8,3 +8,9 @@
 [submodule "dotbot-conditional"]
 	path = dotbot-plugins/dotbot-conditional
 	url = https://gitlab.com/gnfzdz/dotbot-conditional.git
+[submodule "dotbot-sops"]
+	path = dotbot-plugins/dotbot-sops
+	url = https://github.com/elogiclab/dotbot-sops.git
+[submodule "dotbot-git"]
+	path = dotbot-plugins/dotbot-git
+	url = https://github.com/DrDynamic/dotbot-git.git
