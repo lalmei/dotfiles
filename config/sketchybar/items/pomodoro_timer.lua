@@ -32,6 +32,8 @@ local pomodoro_timer = sbar.add("item", {
 		align = "center",
 		horizontal = true,
 	},
+	padding_left = 10,
+	padding_right = 10,
 })
 
 local function start_timer()

@@ -64,8 +64,8 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 local wifi = sbar.add("item", "widgets.wifi.padding", {
 	position = "right",
 	label = { drawing = false },
-	padding_left = 0,
-	padding_right = 0,
+	padding_left = 10,
+	padding_right = 10,
 })
 
 -- Background around the item

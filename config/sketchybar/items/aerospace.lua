@@ -149,7 +149,7 @@ for workspace_index = 1, max_workspaces do
 			padding_right = 20,
 			color = colors.fg_secondary,
 			highlight_color = colors.fg,
-			font = "sketchybar-app-font:Regular:16.0",
+			font = "sketchybar-app-font:Regular:14.0",
 			y_offset = -1,
 		},
 		padding_right = 1,

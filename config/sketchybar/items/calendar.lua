@@ -7,16 +7,18 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 local cal = sbar.add("item", {
 	icon = {
 		font = {
-			style = settings.font.style_map["Black"],
-			size = 16.0,
+			size = 13.0,
+			family = "MesloLGS Nerd Font Mono",
+			style = "Bold"
 		},
 	},
 	label = {
-		width = 49,
+		width = 45,
 		align = "right",
 		font = {
-			size = 16.0,
-			family = settings.font.text
+			size = 13.0,
+			family = "MesloLGS Nerd Font Mono",
+			style = "Bold"
 		},
 	},
 	position = "right",
@@ -24,5 +26,5 @@ local cal = sbar.add("item", {
 })
 
 cal:subscribe({ "forced", "routine", "system_woke" }, function(env)
-	cal:set({ icon = os.date("%a. %d %b."), label = os.date("%H:%M") })
+	cal:set({ icon = os.date("%a %d %b"), label = os.date("%H:%M") })
 end)

@@ -4,32 +4,34 @@ local settings = require("settings")
 
 local battery = sbar.add("item", "widgets.battery", {
 	position = "right",
-	icon = { string = icons.cpu },
+	icon = { string = icons.battery },
 	label = {
+		string = "???%",
 		font = {
-			family = settings.font.numbers,
+			family = "MesloLGS Nerd Font Mono",
 		},
 		color = colors.fg,
 		width = 0,
+		padding_left = 5,
 	},
-	padding_left = 4,
-	padding_right = 4,
+	padding_left = 5,
+	padding_right = 5,
 	update_freq = 180,
 })
 
-local remaining_time = sbar.add("item", {
-	position = "popup." .. battery.name,
-	icon = {
-		string = "Time remaining:",
-		width = 100,
-		align = "left",
-	},
-	label = {
-		string = "??:??h",
-		width = 100,
-		align = "right",
-	},
-})
+-- local remaining_time = sbar.add("item", {
+-- 	position = "popup." .. battery.name,
+-- 	icon = {
+-- 		string = "Time remaining:",
+-- 		width = 100,
+-- 		align = "left",
+-- 	},
+-- 	label = {
+-- 		string = "??:??h",
+-- 		width = 100,
+-- 		align = "left",
+-- 	},
+-- })
 
 battery:subscribe({ "routine", "power_source_change", "system_woke" }, function()
 	sbar.exec("pmset -g batt", function(batt_info)
@@ -78,21 +80,21 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
 	end)
 end)
 
-battery:subscribe("mouse.clicked", function(env)
-	local drawing = battery:query().popup.drawing
-	battery:set({ popup = { drawing = "toggle" } })
+-- battery:subscribe("mouse.clicked", function(env)
+-- 	local drawing = battery:query().popup.drawing
+-- 	battery:set({ popup = { drawing = "toggle" } })
 
-	if drawing == "off" then
-		sbar.exec("pmset -g batt", function(batt_info)
-			local found, _, remaining = batt_info:find(" (%d+:%d+) remaining")
-			local label = found and remaining .. "h" or "No estimate"
-			remaining_time:set({ label = label })
-		end)
-	end
-end)
+-- 	if drawing == "off" then
+-- 		sbar.exec("pmset -g batt", function(batt_info)
+-- 			local found, _, remaining = batt_info:find(" (%d+:%d+) remaining")
+-- 			local label = found and remaining .. "h" or "?"
+-- 			remaining_time:set({ label = label })
+-- 		end)
+-- 	end
+-- end)
 
 battery:subscribe("mouse.entered", function(env)
-	sbar.animate("tanh", 30, function()
+	sbar.animate("tanh", 20, function()
 		battery:set({
 			label = { width = "dynamic" },
 		})

@@ -33,6 +33,8 @@ local todo = sbar.add("item", {
 		align = "center",
 		horizontal = true,
 	},
+	padding_left = 5,
+	padding_right = 5,
 })
 
 local new_todo_button = sbar.add("item", {
@@ -57,7 +59,7 @@ local function newTodo()
 	is_entering = true
 
 	local input_cmd =
-		[[osascript -e 'Tell application "System Events" to display dialog "Enter TODO:" default answer ""' -e 'text returned of result']]
+	[[osascript -e 'Tell application "System Events" to display dialog "Enter TODO:" default answer ""' -e 'text returned of result']]
 
 	sbar.exec(input_cmd, function(result)
 		-- Remove any trailing newline from the input

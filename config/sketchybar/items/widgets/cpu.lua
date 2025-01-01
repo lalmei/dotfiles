@@ -16,10 +16,13 @@ local cpu = sbar.add("item", {
 		},
 		color = colors.fg,
 		width = 0,
+		padding_left = 5,
 	},
 	background = {
 		color = colors.with_alpha(colors.bg, 1),
 	},
+	padding_left = 5,
+	padding_right = 5,
 })
 
 cpu:subscribe("cpu_update", function(env)

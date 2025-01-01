@@ -10,10 +10,13 @@ local volume = sbar.add("item", "widgets.volume", {
 		string = icons.volume._100,
 	},
 	label = {
-		string = "??%",
+		string = "???%",
 		font = { family = settings.font.numbers },
 		width = 0,
+		padding_left = 5,
 	},
+	padding_left = 10,
+	padding_right = 10,
 })
 
 -- local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
@@ -59,14 +62,14 @@ volume:subscribe("volume_change", function(env)
 		icon = icons.volume._10
 	end
 
-	local lead = ""
-	if vol < 10 then
-		lead = "0"
-	end
+	-- local lead = ""
+	-- if vol < 10 then
+	-- 	lead = ""
+	-- end
 
 	volume:set({
 		icon = { string = icon },
-		label = { string = lead .. vol .. "%" },
+		label = { string = vol .. "%" },
 	})
 	-- volume_slider:set({ slider = { percentage = vol } })
 end)

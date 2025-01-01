@@ -15,8 +15,6 @@ command -v mas >/dev/null || brew install mas
 
 
 
-
-
 #Install poetry
 zsh $(curl -sSL https://install.python-poetry.org | python3 - )
 poetry completions zsh > ~/.zfunc/_poetry

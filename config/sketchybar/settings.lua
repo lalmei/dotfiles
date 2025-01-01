@@ -1,13 +1,13 @@
 return {
 	paddings = 4,
-	group_paddings = 5,
+	group_paddings = 10,
 	icon = {
-		padding_left = 8,
-		padding_right = 8,
+		padding_left = 10,
+		padding_right = 10,
 	},
 	label = {
-		padding_left = 8,
-		padding_right = 8,
+		padding_left = 10,
+		padding_right = 10,
 	},
 
 	icons = "sf-symbols", -- alternatively available: NerdFont

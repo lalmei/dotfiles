@@ -49,9 +49,9 @@ for k, v in pairs(theme) do
 end
 
 if is_dark_mode then
-	colors.fg = theme.silver
+	colors.fg = theme.cyan
 	colors.fg_highlight = theme.blue
-	colors.fg_secondary = theme.silver
+	colors.fg_secondary = theme.rosewater
 	colors.bg = theme.black
 	colors.border = mocha.crust.base16
 	-- colors.active = theme.white
