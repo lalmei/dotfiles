@@ -144,6 +144,7 @@ for workspace_index = 1, max_workspaces do
 			string = workspace_index,
 			padding_left = 15,
 			padding_right = 8,
+			highlight_color = colors.fg_secondary,
 		},
 		label = {
 			padding_right = 20,

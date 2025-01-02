@@ -16,7 +16,7 @@ export PATH="$POETRY_HOME/bin:$PATH"
 
 bindkey '^R' history-incremental-search-backward
 
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 # Use modern completion system
@@ -81,3 +81,6 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+
+export BAT_THEME="Catppuccin Mocha"

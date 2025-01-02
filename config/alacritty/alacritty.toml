@@ -12,7 +12,7 @@ history = 100000
 [font]
 size = 13.0
 [font.normal]
-# family = "MesloLGS NF"
+
 family = "MesloLGS Nerd Font"
 style = 'Regular'
 
@@ -23,7 +23,7 @@ y = 1
 [window]
 padding = {x = 15, y= 10 }
 decorations = "Buttonless"
-opacity = 0.9
+opacity = 1
 
 
 [keyboard]

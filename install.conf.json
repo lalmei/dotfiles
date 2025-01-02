@@ -18,6 +18,7 @@
          }
       }
   },
+  {"create": ["~/.zfunc/"]},
   {
     "link":
       {
@@ -32,17 +33,14 @@
         "~/.config/btop/": { "path": "config/btop/*", "glob": true },
         "~/.config/starship.toml": { "path": "config/starship/starship.toml" },
         "~/.vimrc/": { "path": "config/vim/vimrc" },
-        "~/.config/tmux/": { "path": "config/tmux/*", "glob":true }
+        "~/.config/tmux/": { "path": "config/tmux/*", "glob":true },
+        "~/.config/bat/": { "path": "config/bat/*", "glob":true }
       }
   },
   { "shell": [
     {
       "command": "zsh config/mac/initializer.sh",
       "description": "Install brew, brew bundle and mas"
-    },
-    {
-      "command": "git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm",
-      "description" : "Install tmux plugin manager"
     }
     ]
   },

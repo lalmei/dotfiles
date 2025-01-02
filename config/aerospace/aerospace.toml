@@ -70,7 +70,7 @@ outer.left =       5
 outer.bottom =     5
 # in case we are using sketchybar with the aoole bar automatically hidding
 # sketchybar is 40 plus a 5 gap
-outer.top =        45
+outer.top =        30
 outer.right =      5
 
 # 'main' binding mode declaration
