@@ -63,6 +63,12 @@ command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 command -v jq >/dev/null || error_msg "Please install jq JSON parsing utility" 1
 command -v eza >/dev/null || error_msg "Please install eza for a modern replacement of ls" 1
 
+
+#for bat
+
+command -v bat > /dev/null && bat cache --init && export BAT_THEME="Catppuccin Mocha"
+
+
 # Init custom scripts
 
 # aliases
@@ -72,7 +78,7 @@ command -v eza >/dev/null || error_msg "Please install eza for a modern replacem
 # [[ -f "$HOME/.config/scripts/_secrets" ]] && source "$HOME/.config/scripts/_secrets"
 
 # mac os
-# [[ uname -s == "Darwin" ]] && [[ -f "$HOME/.config/scripts/mac"]] && source "$HOME/.config/scripts/mac/.macos"
+# [[ uname -s == "Darwin" ]] && [[ -f "$HOME/.config/scripts/.macos"]] && source "$HOME/.config/scripts/mac/.macos"
 
 #for compiling
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
@@ -82,5 +88,3 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
-
-export BAT_THEME="Catppuccin Mocha"

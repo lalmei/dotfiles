@@ -13,9 +13,9 @@ config := install.conf.json
 help: ## Print the help screen.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":|:[[:space:]].*?##"}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-
-run:  $(config) sync-dotbot links shell brewfile # run full install
-
+.PHONY: run
+run:  ## full install 
+	${dotbot_dir}/${dotbot_bin} -d "$(base_dir)" --plugin-dir "${dotbot_plugin_dir}/*" -c "${config}" 
 
 .PHONY: sync-dotbot
 sync-dotbot: ## Sync the dotbot submodule.
@@ -24,7 +24,7 @@ sync-dotbot: ## Sync the dotbot submodule.
 
 .PHONY: links
 links: ## Create symlinks for dotfiles.
-	${dotbot_dir}/${dotbot_bin} -d "$(base_dir)" --plugin-dir "${dotbot_plugin_dir}/*" -c "${config}" --only link
+	${dotbot_dir}/${dotbot_bin} -d "$(base_dir)" --plugin-dir "${dotbot_plugin_dir}/*" -c "${config}" --only link 
 
 .PHONY: shell
 shell: ## Run shell commands.

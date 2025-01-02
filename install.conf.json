@@ -34,7 +34,8 @@
         "~/.config/starship.toml": { "path": "config/starship/starship.toml" },
         "~/.vimrc/": { "path": "config/vim/vimrc" },
         "~/.config/tmux/": { "path": "config/tmux/*", "glob":true },
-        "~/.config/bat/": { "path": "config/bat/*", "glob":true }
+        "~/.config/bat/": { "path": "config/bat/*", "glob":true },
+        "~/.gitconfig": { "path": "config/git/.gitconfig" }
       }
   },
   { "shell": [

@@ -158,7 +158,7 @@ mas "Goodnotes", id: 1444383602 # ipad handwritten notes
 
 # java jdk
 tap "bell-sw/liberica"
-cask "liberica-jdk15-full"
+# cask "liberica-jdk15-full"
 cask "liberica-jdk22-full"
 
 ## apps for the kidos
