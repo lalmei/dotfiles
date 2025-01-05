@@ -18,12 +18,13 @@ run:  ## full install
 	${dotbot_dir}/${dotbot_bin} -d "$(base_dir)" --plugin-dir "${dotbot_plugin_dir}/*" -c "${config}" 
 
 .PHONY: sync-dotbot
-sync-dotbot: ## Sync the dotbot submodule.
+ : ## Sync the dotbot submodule.
 	git -C "${dotbot_dir}" submodule sync --quiet --recursive
 	git submodule update --init --recursive "${dotbot_dir}"
 
 .PHONY: links
 links: ## Create symlinks for dotfiles.
+	@echo ${dotbot_dir}/${dotbot_bin} -d "$(base_dir)" --plugin-dir "${dotbot_plugin_dir}/*" -c "${config}" --only link 
 	${dotbot_dir}/${dotbot_bin} -d "$(base_dir)" --plugin-dir "${dotbot_plugin_dir}/*" -c "${config}" --only link 
 
 .PHONY: shell

@@ -19,6 +19,13 @@
       }
   },
   {"create": ["~/.zfunc/"]},
+  { "shell": [
+    {
+      "command": "zsh config/mac/initializer.sh",
+      "description": "Install brew, brew bundle and mas"
+    }
+    ]
+  },
   {
     "link":
       {
@@ -35,17 +42,18 @@
         "~/.vimrc/": { "path": "config/vim/vimrc" },
         "~/.config/tmux/": { "path": "config/tmux/*", "glob":true },
         "~/.config/bat/": { "path": "config/bat/*", "glob":true },
-        "~/.gitconfig": { "path": "config/git/.gitconfig" }
-      }
-  },
-  { "shell": [
+        "~/.gitconfig": { "path": "config/git/.gitconfig" },
+        "~/Library/Application Support/Code/User/settings.json": { "path": "config/Code/User/settings.json" }
+  }
+},
+  {"shell": [
     {
-      "command": "zsh config/mac/initializer.sh",
-      "description": "Install brew, brew bundle and mas"
+      "command": "command -v bat > /dev/null && bat cache --build",
+      "description": "use custom theme for bat"
     }
-    ]
-  },
+  ]},
   { "brewfile": { "file": "config/mac/Brewfile" } },
 
   { "clean": [ "~/.config", "~"] }
+
 ]

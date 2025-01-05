@@ -54,7 +54,10 @@ command -v starship >/dev/null && eval "$(starship init zsh --print-full-init)"
 # Load zoxide if installed:
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Load fzf if installed:
+command -v fzf >/dev/null && eval "$(/opt/homebrew/bin/fzf --zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 
 
 # Cargo config
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
@@ -65,8 +68,8 @@ command -v eza >/dev/null || error_msg "Please install eza for a modern replacem
 
 
 #for bat
+export BAT_THEME="Catppuccin Mocha"
 
-command -v bat > /dev/null && bat cache --init && export BAT_THEME="Catppuccin Mocha"
 
 
 # Init custom scripts

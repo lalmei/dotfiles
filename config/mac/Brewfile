@@ -119,7 +119,6 @@ tap "FelixKratz/formulae"
 brew "sketchybar"
 
 
-tap "nikitabobko/tap"
 cask "nikitabobko/tap/aerospace"
 
 brew "tmux"
@@ -169,7 +168,9 @@ cask "prismlauncher"
 #typing practice
 mas "Type to Learn", id: 1401007562
 
+#social
 
+cask "discord"
 
 
 # vscode

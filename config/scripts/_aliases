@@ -13,10 +13,10 @@ command -v vim >/dev/null &&
 	alias vim='nvim'
 
 
-# FZF options for finding files
-command -v fd >/dev/null &&
-	export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git" ||
-	export FZF_DEFAULT_COMMAND="find . --type f"
+# # FZF options for finding files
+# command -v fzf >/dev/null &&
+# 	export FZF_DEFAULT_COMMAND="fzf --type f --strip-cwd-prefix --hidden --follow --exclude .git" ||
+# 	export FZF_DEFAULT_COMMAND="find . --type f"
 
 # Set preview aliases for Fuzzy Finder alias scripts
 command -v eza >/dev/null &&
