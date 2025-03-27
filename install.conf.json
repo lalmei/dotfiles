@@ -40,10 +40,11 @@
         "~/.config/btop/": { "path": "config/btop/*", "glob": true },
         "~/.config/starship.toml": { "path": "config/starship/starship.toml" },
         "~/.vimrc/": { "path": "config/vim/vimrc" },
+        "~/.gitconfig": { "path": "config/git/.gitconfig" },
         "~/.config/tmux/": { "path": "config/tmux/*", "glob":true },
         "~/.config/bat/": { "path": "config/bat/*", "glob":true },
         "~/.gitconfig": { "path": "config/git/.gitconfig" },
-        "~/Library/Application Support/Code/User/settings.json": { "path": "config/Code/User/settings.json" }
+        "~/Library/Application Support/Code/User/settings.json": { "path": "config/Code/User/settings.json", "relative" : true }
   }
 },
   {"shell": [

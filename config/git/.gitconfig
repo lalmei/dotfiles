@@ -3,3 +3,15 @@
 # Please adapt and uncomment the following lines:
 name = Leandro G. Almeida
 email = leandro.g.almeida@gmail.com
+
+[init]
+	defaultBranch = main
+
+[pull]
+	ff = only
+
+[rebase]
+	autostash = true
+	autosquash = true
+[gitbutler]
+	aiOpenAIKeyOption = bringYourOwn

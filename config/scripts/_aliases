@@ -23,6 +23,7 @@ command -v eza >/dev/null &&
 	# --color-scale only available with eza v >0.15.0
 	export LS_PREVIEW_CMD="eza -al --git --color=always --color-scale --group-directories-first --icons --no-permissions " ||
 	export LS_PREVIEW_CMD="ls -lahg --color=auto "
+	
 
 command -v bat >/dev/null &&
 	export CAT_PREVIEW_CMD="bat --style header --style snip --style changes --style header " ||

@@ -4,6 +4,7 @@
 # for both linux and macos
 
 
+curl -L https://nixos.org/nix/install | sh
 
 #Install poetry
 zsh $(curl -sSL https://install.python-poetry.org | python3 - )

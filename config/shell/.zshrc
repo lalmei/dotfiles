@@ -77,8 +77,12 @@ export BAT_THEME="Catppuccin Mocha"
 # aliases
 [[ -f "$HOME/.config/scripts/_aliases" ]] && source "$HOME/.config/scripts/_aliases"
 
-# #secrets
+#secrets
 # [[ -f "$HOME/.config/scripts/_secrets" ]] && source "$HOME/.config/scripts/_secrets"
+
+## local_secrets
+[[ -f "$HOME/._secrets.sh" ]] && source "$HOME/._secrets.sh"
+
 
 # mac os
 # [[ uname -s == "Darwin" ]] && [[ -f "$HOME/.config/scripts/.macos"]] && source "$HOME/.config/scripts/mac/.macos"
@@ -91,3 +95,9 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lalmei/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lalmei/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lalmei/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lalmei/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
