@@ -1,0 +1,49 @@
+{
+    "editor.fontFamily": "FiraCode Nerd Font, MesloLGS Nerd Font, sf-symbols, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 18,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit",
+          "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+
+    },
+    "python.envFile": "${workspaceFolder}/.venv",
+    "python.poetryPath": "poetry",
+    "python.defaultInterpreterPath": "uv run python",
+    "python.testing.pytestPath": "uv run pytest -c=config/pytest.ini",
+    "debugpy.showPythonInlineValues": true,
+    "python.terminal.activateEnvironment": false,
+    "ruff.enable": true,
+    "files.watcherExclude": {
+        "**/.venv*/**": true,
+        "**/.venvs*/**": true,
+        "**/venv*/**": true
+    },
+    "mypy-type-checker.args": [
+        "--config-file=config/mypy.ini"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "--config-file=config/pytest.ini"
+    ],
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    },
+    "editor.tokenColorCustomizations": {},
+    "cmake.showOptionsMovedNotification": false,
+    "geminicodeassist.project": "asunder-408221",
+    "jupyter.askForKernelRestart": false,
+    "git.openRepositoryInParentFolders": "always",
+    "security.promptForLocalFileProtocolHandling": false,
+}
