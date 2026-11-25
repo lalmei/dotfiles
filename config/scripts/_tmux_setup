@@ -1,21 +1,16 @@
-#!/usr/bin/env sh
+#!/bin/sh
+set -eu
 
+plugin_dir="${HOME}/.config/tmux/plugins"
+tpm_dir="$plugin_dir/tpm"
 
-if [[ -z $1 ]]; then
-	echo "Usage: $0 <project name>"
-	exit 1
+if [ ! -x "$tpm_dir/tpm" ]; then
+    mkdir -p "$plugin_dir"
+    GIT_TERMINAL_PROMPT=0 git clone --depth 1 https://github.com/tmux-plugins/tpm "$tpm_dir"
 fi
 
-
-if uname -s = "Darwin"; then
-
-#use aerospace
-
-aerospace workspace '\uf1c9'
-
-
-else
-
-# use i3wm
-
+# Keep successful reloads quiet and surface installation errors in tmux.
+if ! output=$("$tpm_dir/bin/install_plugins" 2>&1); then
+    printf '%s\n' "$output" >&2
+    exit 1
 fi
