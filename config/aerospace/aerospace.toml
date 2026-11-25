@@ -9,19 +9,10 @@ persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
-# You can use it to add commands that run after AeroSpace startup.
-# 'after-startup-command' is run after 'after-login-command'
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget sketchybar', 'exec-and-forget export FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
-
 # new-window-detection-timeout = 50
 # new-window-detection-debounce = 100
 # Start AeroSpace at login
 start-at-login = true
-
-# Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -44,11 +35,7 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center',
-  'exec-and-forget sketchybar --trigger aerospace_monitor_change FOCUSED_MONITOR=$AEROSPACE_FOCUSED_MONITOR']
-on-focus-changed = [
-  'exec-and-forget sketchybar --trigger aerospace_focus_change',
-]
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -155,24 +142,23 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon =['mode service',
-'exec-and-forget sketchybar --trigger aerospace_mode_change MODE=service']
+alt-shift-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','reload-config', 'mode main']
-r = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','flatten-workspace-tree', 'mode main'] # reset layout
-f = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-backspace = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','close-all-windows-but-current', 'mode main']
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
 
-alt-shift-h = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','join-with left', 'mode main']
-alt-shift-j = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','join-with down', 'mode main']
-alt-shift-k = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','join-with up', 'mode main']
-alt-shift-l = ['exec-and-forget sketchybar --trigger aerospace_mode_change MODE=main','join-with right', 'mode main']
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
 
 
 down = 'volume down'
